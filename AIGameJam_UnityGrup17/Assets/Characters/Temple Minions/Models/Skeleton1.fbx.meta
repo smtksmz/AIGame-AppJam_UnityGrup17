@@ -270,9 +270,9 @@ ModelImporter:
       has translation animation that will be discarded.\n\t'Attack:Skeleton_0010:QuickRigCharacter_Spine1'
       has translation animation that will be discarded.\n\t'Attack:Skeleton_0010:QuickRigCharacter_Spine1'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Attack:Skeleton_0010:QuickRigCharacter_RightForeArm'
-      has translation animation that will be discarded.\n\nClip 'Run' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation DOF
-      on avatar to improve retargeting quality.\n\t'Attack:Skeleton_0010:QuickRigCharacter_LeftLeg'
+      has translation animation that will be discarded.\n\nClip 'Run' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Attack:Skeleton_0010:QuickRigCharacter_LeftLeg'
       has translation animation that will be discarded.\n\t'Attack:Skeleton_0010:QuickRigCharacter_RightLeg'
       has translation animation that will be discarded.\n\t'Attack:Skeleton_0010:QuickRigCharacter_RightToeBase'
       has translation animation that will be discarded.\n\t'Attack:Skeleton_0010:QuickRigCharacter_Spine1'
@@ -572,3 +572,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79142
+  packageName: Toon Skeleton Minion Bundle - Egypt
+  packageVersion: 1.0
+  assetPath: Assets/Characters/Temple Minions/Models/Skeleton1.fbx
+  uploadId: 201187
