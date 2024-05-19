@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.MLAgents.Sensors;
 using UnityEngine;
 using UnityEngine.AI;
-using Unity.MLAgents;
-using Unity.MLAgents.Actuators;
 
-public class NPCAgent : Agent
+public class NPC : MonoBehaviour
 {
     public Transform player; // Oyuncu karakterinin transform'u
     public float detectionRadius = 20f; // NPC'nin oyuncuyu tespit etme mesafesi
@@ -19,45 +16,18 @@ public class NPCAgent : Agent
     private float timer;
     private bool isAttacking;
 
-    public override void Initialize()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         timer = wanderTimer;
     }
 
-    public override void OnEpisodeBegin()
+    void Update()
     {
-        // NPC'nin ve oyuncunun baþlangýç konumlarýný belirleyin
-        transform.localPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-        //player.localPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-    }
+        timer += Time.deltaTime;
 
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        // NPC'nin oyuncuya olan mesafesini gözlemleyin
-        sensor.AddObservation(Vector3.Distance(player.position, transform.position));
-
-        // NPC'nin kendi konumunu gözlemleyin
-        sensor.AddObservation(transform.localPosition);
-
-        // NPC'nin yönünü gözlemleyin
-        sensor.AddObservation(transform.forward);
-    }
-
-    public override void OnActionReceived(ActionBuffers actions)
-    {
-        var continuousActions = actions.ContinuousActions;
-
-        // NPC'nin hareketini kontrol edin
-        Vector3 move = new Vector3(continuousActions[0], 0, continuousActions[1]);
-        agent.Move(move * Time.deltaTime * 10f);
-
-        // Oyuncuya olan mesafeyi kontrol edin
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-
-        // Ödül mekanizmasý
-        AddReward(-0.001f); // Zamanla küçük negatif ödül
 
         if (distanceToPlayer <= attackRadius)
         {
@@ -67,9 +37,8 @@ public class NPCAgent : Agent
                 agent.SetDestination(transform.position); // Hareket etmeyi durdur
                 animator.SetTrigger("4");
                 animator.SetBool("isWalking", false);
-
+                
                 isAttacking = true;
-                AddReward(1.0f); // Saldýrý ödülü
             }
         }
         else if (distanceToPlayer <= detectionRadius)
@@ -78,9 +47,8 @@ public class NPCAgent : Agent
             agent.SetDestination(player.position);
             animator.SetBool("isWalking", true);
             animator.ResetTrigger("4");
-
+            
             isAttacking = false;
-            AddReward(0.1f); // Oyuncuya yaklaþma ödülü
         }
         else
         {
@@ -95,18 +63,8 @@ public class NPCAgent : Agent
                 Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
                 agent.SetDestination(newPos);
                 timer = 0;
-                AddReward(0.01f); // Rastgele dolaþma ödülü
             }
         }
-
-        timer += Time.deltaTime;
-    }
-
-    public override void Heuristic(in ActionBuffers actionsOut)
-    {
-        var continuousActionsOut = actionsOut.ContinuousActions;
-        continuousActionsOut[0] = Input.GetAxis("Horizontal");
-        continuousActionsOut[1] = Input.GetAxis("Vertical");
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
@@ -122,4 +80,3 @@ public class NPCAgent : Agent
         return navHit.position;
     }
 }
-
