@@ -1,0 +1,29 @@
+{
+    "TargetLocked": {
+        "checkpoints": [
+            {
+                "steps": 3132,
+                "file_path": "results\\MovingAgentRun4\\TargetLocked\\TargetLocked-3132.onnx",
+                "reward": 0.0,
+                "creation_time": 1716063599.791037,
+                "auxillary_file_paths": [
+                    "results\\MovingAgentRun4\\TargetLocked\\TargetLocked-3132.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3132,
+            "file_path": "results\\MovingAgentRun4\\TargetLocked.onnx",
+            "reward": 0.0,
+            "creation_time": 1716063599.791037,
+            "auxillary_file_paths": [
+                "results\\MovingAgentRun4\\TargetLocked\\TargetLocked-3132.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cpu"
+    }
+}

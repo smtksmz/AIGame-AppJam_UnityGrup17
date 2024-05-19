@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1716115683",
+        "python_version": "3.10.12 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 19:01:18) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "\\\\?\\C:\\Users\\smtks\\anaconda3\\envs\\mlagents\\Scripts\\mlagents-learn config/NPCBehavior_config.yaml --run-id=NPCBehaviorRun1",
+        "mlagents_version": "1.0.0",
+        "mlagents_envs_version": "1.0.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.2.2+cpu",
+        "numpy_version": "1.21.5",
+        "end_time_seconds": "1716115693"
+    },
+    "total": 10.1991017999826,
+    "count": 1,
+    "self": 0.008187600004021078,
+    "children": {
+        "run_training.setup": {
+            "total": 0.08969609998166561,
+            "count": 1,
+            "self": 0.08969609998166561
+        },
+        "TrainerController.start_learning": {
+            "total": 10.101218099996913,
+            "count": 1,
+            "self": 9.739998495206237e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 10.101106900023296,
+                    "count": 1,
+                    "self": 10.101106900023296
+                },
+                "TrainerController._save_models": {
+                    "total": 1.379998866468668e-05,
+                    "count": 1,
+                    "self": 1.379998866468668e-05
+                }
+            }
+        }
+    }
+}

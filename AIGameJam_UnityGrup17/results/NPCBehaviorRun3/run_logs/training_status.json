@@ -1,0 +1,38 @@
+{
+    "NPCBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499968,
+                "file_path": "results\\NPCBehaviorRun3\\NPCBehavior\\NPCBehavior-499968.onnx",
+                "reward": null,
+                "creation_time": 1716119270.8778722,
+                "auxillary_file_paths": [
+                    "results\\NPCBehaviorRun3\\NPCBehavior\\NPCBehavior-499968.pt"
+                ]
+            },
+            {
+                "steps": 500032,
+                "file_path": "results\\NPCBehaviorRun3\\NPCBehavior\\NPCBehavior-500032.onnx",
+                "reward": null,
+                "creation_time": 1716119270.9252677,
+                "auxillary_file_paths": [
+                    "results\\NPCBehaviorRun3\\NPCBehavior\\NPCBehavior-500032.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500032,
+            "file_path": "results\\NPCBehaviorRun3\\NPCBehavior.onnx",
+            "reward": null,
+            "creation_time": 1716119270.9252677,
+            "auxillary_file_paths": [
+                "results\\NPCBehaviorRun3\\NPCBehavior\\NPCBehavior-500032.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cpu"
+    }
+}
